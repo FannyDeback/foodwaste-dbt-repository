@@ -9,7 +9,7 @@ sources:
         identifier: Agrybalise - CO2 emissions # nom exact de la table
         description: bla
       - name: Food_Waste_table #alias table BQ
-        identifier: FAO - Food Waste # nom exact de la table
+        identifier: Waste3 # nom exact de la table
         description: bla
       - name: Food_productions #alias table BQ
         identifier: FAO - Food productions # nom exact de la table
