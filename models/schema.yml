@@ -7,11 +7,11 @@ sources:
     tables:
       - name: CO2_emissions #alias table BQ
         identifier: Agrybalise - CO2 emissions # nom exact de la table
-        description: bla
+        description: Une qui fait le lien entre chaque type de produit et l’émission de CO2
       - name: Food_Waste_table #alias table BQ
         identifier: FAO - Food Waste # nom exact de la table
-        description: bla
+        description: Une table qui fait le lien avec les quantités de produits qui sont produits et jetés
       - name: Food_productions #alias table BQ
         identifier: FAO - Food productions # nom exact de la table
-        description: bla
+        description: Une table produits par chaque pays
          
