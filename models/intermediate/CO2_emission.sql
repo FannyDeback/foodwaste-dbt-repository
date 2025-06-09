@@ -1,3 +1,3 @@
 SELECT
-EXCEPT(loss_percentage_original)
-FROM {{ ref('stg_raw__CO2_emissions') }};
+*
+FROM {{ ref('stg_raw__Food_Waste_table') }}
