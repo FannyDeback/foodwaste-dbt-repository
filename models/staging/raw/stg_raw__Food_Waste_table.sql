@@ -16,7 +16,6 @@ renamed as (
         commodity,
         year,
         loss_percentage,
-        loss_percentage_original,
         loss_quantity,
         activity,
         food_supply_stage,
