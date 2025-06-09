@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: foodwaste # où se situe la table dans BQ
+    description: projet sur le gaspillage alimentaire batch 2006
+    tables:
+      - name: CO2_emissions #alias table BQ
+        identifier: Agrybalise - CO2 emissions # nom exact de la table
+        description: bla
+      - name: Food_Waste_table #alias table BQ
+        identifier: FAO - Food Waste # nom exact de la table
+        description: bla
+      - name: Food_productions #alias table BQ
+        identifier: FAO - Food productions # nom exact de la table
+        description: bla
+         
