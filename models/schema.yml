@@ -95,16 +95,9 @@ sources:
             description: Lien vers la source des données ou rapport officiel
           - name:  notes
             description: Remarques supplémentaires sur la fiabilité ou la précision des données
-<<<<<<< HEAD
-      - name: Food_productions  # Alias table BQ
-        identifier: "FAO - Food productions"  # Nom exact de la table
-=======
-
-
 
       - name: Food_productions_full  # Alias table BQ
         identifier: Production2  # Nom exact de la table
->>>>>>> 3368095cb129014088c3a9f504bddd2e19cc05b9
         description:  Données sur la production alimentaire mondiale
         columns:
           - name: domain_code
@@ -137,9 +130,4 @@ sources:
             description: Description du code drapeau
           - name: note
             description:  Remarques supplémentaires sur la donnée ou la méthode de collecte
-<<<<<<< HEAD
-      - name: Food_productions_full  # Alias table BQ
-        identifier: Production2  # Nom exact de la table
-        description:  Données sur la production alimentaire mondiale
-=======
->>>>>>> 3368095cb129014088c3a9f504bddd2e19cc05b9
+
