@@ -134,6 +134,7 @@ sources:
             description: Description du code drapeau
           - name: note
             description:  Remarques supplémentaires sur la donnée ou la méthode de collecte
-          
-       
-         
+
+      - name: Food_productions_full  # Alias table BQ
+        identifier: Production2  # Nom exact de la table
+        description:  Données sur la production alimentaire mondiale
