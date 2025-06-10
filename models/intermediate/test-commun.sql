@@ -14,4 +14,16 @@ ORDER BY total_emissions DESC
 
 SELECT 
 country
-FROM {{ ref('stg_raw__Food_Waste_table')}}
+FROM {{ ref('stg_raw__Food_Waste_table') }}
+
+SELECT 
+DISTINCT commodity
+FROM  {{ ref('stg_raw__Food_Waste_table') }}
+WHERE commodity NOT IN (SELECT item FROM {{ ref('stg_raw__Food_productions')}})
+ORDER BY commodity
+
+--97commun
+
+SELECT 
+DISTINCT commodity
+FROM  {{ ref('stg_raw__Food_Waste_table') }}
