@@ -10,8 +10,10 @@ renamed as (
 
     select
         domain,
+        Area Code _M49_,
         area,
         element,
+        item code _cpc_,
         item,
         year,
         unit,

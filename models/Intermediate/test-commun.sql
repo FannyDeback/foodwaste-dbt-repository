@@ -35,3 +35,7 @@ FULL OUTER JOIN {{ ref('stg_raw__Food_Waste_table')}} w
 ON LOWER(f.area) = LOWER(w.country )
 ORDER BY f.area
 
+SELECT 
+DISTINCT country
+FROM {{ ref('stg_raw__Food_Waste_table') }}
+ORDER by country
