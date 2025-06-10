@@ -30,7 +30,7 @@ FROM  {{ ref('stg_raw__Food_Waste_table') }}
 
 
 SELECT distinct f.area, w.country
-FROM {{ ref('stg_raw__Food_productions')}} f 
+FROM {{ ref('stg_raw__Food_productions_full') }} f 
 FULL OUTER JOIN {{ ref('stg_raw__Food_Waste_table')}} w 
 ON LOWER(f.area) = LOWER(w.country )
 ORDER BY f.area
