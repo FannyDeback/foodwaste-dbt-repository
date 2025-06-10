@@ -5,22 +5,6 @@ sources:
     schema: foodwaste  # Où se situe la table dans BQ
     description: Projet sur le gaspillage alimentaire batch 2006
     tables:
-<<<<<<< HEAD
-      - name: CO2_emissions #alias table BQ
-        identifier: Agrybalise - CO2 emissions # nom exact de la table
-        description: Une qui fait le lien entre chaque type de produit et l’émission de CO2
-      - name: Food_Waste_table #alias table BQ
-<<<<<<< HEAD
-        identifier: FAO - Food Waste # nom exact de la table
-        description: Une table qui fait le lien avec les quantités de produits qui sont produits et jetés
-=======
-        identifier: Waste3 # nom exact de la table
-        description: bla
->>>>>>> 30e9c95b57522f37888890cc94784bc1e58340ec
-      - name: Food_productions #alias table BQ
-        identifier: FAO - Food productions # nom exact de la table
-        description: Une table produits par chaque pays
-=======
       - name: CO2_emissions  # Alias table BQ
         identifier: "Agrybalise - CO2 emissions"  # Nom exact de la table
         description: Données sur les émissions de CO2 liées à la production alimentaire
@@ -45,17 +29,17 @@ sources:
             description: Total des émissions de CO2 générées
           - name: eutrophying_emissions_per_1000kcal__gpo___eq_per_1000kcal_
             description: Emissions eutrophisantes par 1000 kcal (grammes PO₄-eq)
-          - name: eutrophying_emissions_per_kilogram__gpo___eq_per_kilogram_ 
+          - name: eutrophying_emissions_per_kilogram__gpo___eq_per_kilogram_
             description: Emissions eutrophisantes par kilogramme (grammes PO₄-eq)
-          - name: eutrophying_emissions_per_100g_protein__gpo___eq_per_100_grams_protein_ 
+          - name: eutrophying_emissions_per_100g_protein__gpo___eq_per_100_grams_protein_
             description:  Emissions eutrophisantes par 100 g de protéines (grammes PO₄-eq)
           - name: freshwater_withdrawals_per_1000kcal__liters_per_1000kcal_
             description:  Prélèvements d'eau douce par 1000 kcal (litres)
-          - name: freshwater_withdrawals_per_100g_protein__liters_per_100g_protein_ 
+          - name: freshwater_withdrawals_per_100g_protein__liters_per_100g_protein_
             description: Prélèvements d'eau douce par 100 g de protéines (litres)
           - name: freshwater_withdrawals_per_kilogram__liters_per_kilogram_
             description:  Prélèvements d'eau douce par kilogramme (litres)
-          - name: greenhouse_gas_emissions_per_1000kcal__kgco___eq_per_1000kcal_ 
+          - name: greenhouse_gas_emissions_per_1000kcal__kgco___eq_per_1000kcal_
             description: Emissions de gaz à effet de serre par 1000 kcal (kg CO₂-eq)
           - name: greenhouse_gas_emissions_per_100g_protein__kgco___eq_per_100g_protein_
             description: Emissions de gaz à effet de serre par 100 g de protéines (kg CO₂-eq)
@@ -73,10 +57,6 @@ sources:
             description: Utilisation de l'eau pondérée par la rareté par 1000 kcal (litres)
           - name: category
             description: Catégorie du produit alimentaire
-          
-          
-                   
-
       - name: Food_Waste_table  # Alias table BQ
         identifier: Waste3  # Nom exact de la table
         description: Données sur le gaspillage alimentaire
@@ -90,7 +70,7 @@ sources:
           - name: cpc_code
             description: Code de classification des produits selon la norme CPC
           - name: commodity
-            description: Type de produit alimentaire analysé 
+            description: Type de produit alimentaire analysé
           - name: year
             description: Année de mesure des pertes alimentaires
           - name: loss_percentage
@@ -98,24 +78,23 @@ sources:
           - name: loss_quantity
             description: Quantité de perte alimentaire exprimée en tonnes
           - name: activity
-            description: Type activité liée aux pertes 
+            description: Type activité liée aux pertes
           - name: food_supply_stage
             description: Phase de la chaîne approvisionnement alimentaire où la perte se produit
           - name: treatment
-            description: Mode de traitement des pertes alimentaires 
+            description: Mode de traitement des pertes alimentaires
           - name: cause_of_loss
-            description: Cause identifiée du gaspillage alimentaire 
+            description: Cause identifiée du gaspillage alimentaire
           - name: sample_size
             description: Nombre échantillons utilisés pour calculer les pertes alimentaires
           - name: method_data_collection
-            description: Méthode de collecte des données 
+            description: Méthode de collecte des données
           - name: reference
             description: Référence ou source utilisée pour la collecte des données
           - name: url
             description: Lien vers la source des données ou rapport officiel
           - name:  notes
             description: Remarques supplémentaires sur la fiabilité ou la précision des données
-
       - name: Food_productions  # Alias table BQ
         identifier: "FAO - Food productions"  # Nom exact de la table
         description:  Données sur la production alimentaire mondiale
@@ -145,19 +124,11 @@ sources:
           - name: value
             description: Valeur correspondant à la quantité produite
           - name:  flag
-            description: indicateur utilisé par la FAO pour qualifier la source, la fiabilité ou le mode d’obtention des données
+            description: indicateur utilisé par la FAO pour qualifier la source, la fiabilité ou le mode d'obtention des données
           - name: flag_description
             description: Description du code drapeau
           - name: note
             description:  Remarques supplémentaires sur la donnée ou la méthode de collecte
-<<<<<<< HEAD
-          
-       
->>>>>>> 01f4a0578e8de75155acad2e6aff1b2c8e73e665
-         
-=======
-
       - name: Food_productions_full  # Alias table BQ
         identifier: Production2  # Nom exact de la table
         description:  Données sur la production alimentaire mondiale
->>>>>>> e6a87b04dd867c3c6c20302dcd890e616ef1f442
