@@ -16,7 +16,7 @@ renamed as (
         intermediate_region_code,
         intermediate_region_name,
         country_or_area,
-        m49_code
+        `m49_code` AS country_code
 
     from source
 
