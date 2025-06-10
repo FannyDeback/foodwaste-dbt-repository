@@ -1,1 +1,0 @@
- SELECT * FROM {{ ref('stg_raw__Food_productions')}}
