@@ -9,16 +9,13 @@ source as (
 renamed as (
 
     select
-        domain code,
         domain,
-        area code _m49_,
+        `area code _m49_` as area_code,
         area,
-        element code,
         element,
-        item code _cpc_,
+        REGEXP_REPLACE(`item code _cpc_`, r'^0+', '') as item_code,
         item,
-        year code,
-        year,
+        PARSE_DATE('%Y', CAST(year AS STRING)) AS year,
         unit,
         value,
         flag,

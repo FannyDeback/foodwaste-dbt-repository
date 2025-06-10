@@ -110,7 +110,7 @@ sources:
             description: Code du domaine FAO pour la classification des données
           - name: domain
             description:  Nom du domaine
-          - name: area_code__m49_
+          - name: Area Code _M49_
             description: Code M49 attribué au pays ou à la région selon l'ONU
           - name: area
             description: Nom du pays ou de la région
@@ -118,7 +118,7 @@ sources:
             description: Code de l'élément décrivant la mesure de production
           - name: element
             description: Type de donnée mesurée
-          - name: item_code__cpc_
+          - name: Item Code _CPC_
             description: Code CPC de classification des produits alimentaires
           - name: item
             description:  Nom du produit alimentaire

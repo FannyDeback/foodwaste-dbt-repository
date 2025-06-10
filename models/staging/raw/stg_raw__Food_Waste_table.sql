@@ -9,12 +9,12 @@ source as (
 renamed as (
 
     select
-        m49_code,
+        m49_code as area_code,
         country,
         region,
-        cpc_code,
+        cpc_code as item_code,
         commodity,
-        year,
+        PARSE_DATE('%Y', CAST(year AS STRING)) AS year,
         loss_percentage,
         loss_quantity,
         activity,
