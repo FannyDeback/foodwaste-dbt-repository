@@ -9,15 +9,10 @@ source as (
 renamed as (
 
     select
-        domain code,
         domain,
-        area code _m49_,
         area,
-        element code,
         element,
-        item code _cpc_,
         item,
-        year code,
         year,
         unit,
         value,
