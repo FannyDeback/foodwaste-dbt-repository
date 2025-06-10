@@ -2,7 +2,7 @@ SELECT
 DISTINCT Food_product, 
 total_emissions,
 FROM {{ ref('stg_raw__CO2_emissions')}}
-WHERE Food_product IN (SELECT Item FROM {{ ref('stg_raw__Food_productions')}})
+WHERE Food_product IN (SELECT Item FROM {{ ref('stg_raw__Food_productions_full') }})
 ORDER BY Food_product
 
 SELECT 
@@ -14,12 +14,12 @@ ORDER BY total_emissions DESC
 
 SELECT 
 DISTINCT area
-FROM {{ ref('stg_raw__Food_productions') }}
+FROM {{ ref('stg_raw__Food_productions_full') }}
 
 SELECT 
 DISTINCT commodity
 FROM  {{ ref('stg_raw__Food_Waste_table') }}
-WHERE commodity NOT IN (SELECT item FROM {{ ref('stg_raw__Food_productions')}})
+WHERE commodity NOT IN (SELECT item FROM {{ ref('stg_raw__Food_productions_full') }})
 ORDER BY commodity
 
 --97commun
