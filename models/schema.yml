@@ -136,3 +136,7 @@ sources:
             description: Description du code drapeau
           - name: note
             description:  Remarques supplémentaires sur la donnée ou la méthode de collecte
+
+      - name: Region_Country_Code  # Alias table BQ
+        identifier: Region_Country_Code  # Nom exact de la table
+        description:  Tableau de correspondance entre les pays et les régions
