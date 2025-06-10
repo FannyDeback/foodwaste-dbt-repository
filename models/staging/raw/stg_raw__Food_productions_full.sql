@@ -13,7 +13,7 @@ renamed as (
         `area code _m49_` as area_code,
         area,
         element,
-        `item code _cpc_` as item_code,
+        REGEXP_REPLACE(`item code _cpc_`, r'^0+', '') as item_code,
         item,
         PARSE_DATE('%Y', CAST(year AS STRING)) AS year,
         unit,
