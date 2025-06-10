@@ -13,8 +13,8 @@ FROM {{ ref('stg_raw__CO2_emissions')}}
 ORDER BY total_emissions DESC
 
 SELECT 
-country
-FROM {{ ref('stg_raw__Food_Waste_table') }}
+DISTINCT area
+FROM {{ ref('stg_raw__Food_productions') }}
 
 SELECT 
 DISTINCT commodity
@@ -27,3 +27,11 @@ ORDER BY commodity
 SELECT 
 DISTINCT commodity
 FROM  {{ ref('stg_raw__Food_Waste_table') }}
+
+
+SELECT distinct f.area, w.country
+FROM {{ ref('stg_raw__Food_productions')}} f 
+FULL OUTER JOIN {{ ref('stg_raw__Food_Waste_table')}} w 
+ON LOWER(f.area) = LOWER(w.country )
+ORDER BY f.area
+
