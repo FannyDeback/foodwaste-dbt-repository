@@ -1,1 +1,1 @@
- SELECT * FROM {{ ref('stg_raw__Food_Waste_table')}}
+ SELECT * FROM {{ ref('stg_raw__Food_productions')}}
