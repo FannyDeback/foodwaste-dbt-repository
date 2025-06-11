@@ -9,6 +9,7 @@ source as (
 renamed as (
 
     select
+        co2_cat_id,
         food_product,
         land_use_change,
         animal_feed,
