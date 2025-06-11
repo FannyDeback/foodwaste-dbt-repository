@@ -57,6 +57,9 @@ sources:
             description: Utilisation de l'eau pondérée par la rareté par 1000 kcal (litres)
           - name: category
             description: Catégorie du produit alimentaire
+          - name: CO2_cat_id
+            description: id des produits
+
           
           
                    

@@ -9,7 +9,6 @@ source as (
 renamed as (
 
     select
-        co2_cat_id,
         food_product,
         land_use_change,
         animal_feed,
@@ -33,7 +32,8 @@ renamed as (
         scarcity_weighted_water_use_per_kilogram__liters_per_kilogram_,
         scarcity_weighted_water_use_per_100g_protein__liters_per_100g_protein_,
         scarcity_weighted_water_use_per_1000kcal__liters_per_1000_kilocalories_,
-        category
+        category,
+        co2_cat_id
 
     from source
 
