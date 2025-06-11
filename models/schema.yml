@@ -64,8 +64,8 @@ sources:
           
                    
 
-      - name: Food_Waste_table  # Alias table BQ
-        identifier: Waste3  # Nom exact de la table
+      - name: new_waste_table  # Alias table BQ
+        identifier: New_Waste # Nom exact de la table
         description: Données sur le gaspillage alimentaire
         columns:
           - name:  m49_code
@@ -103,7 +103,7 @@ sources:
           - name:  notes
             description: Remarques supplémentaires sur la fiabilité ou la précision des données
 
-
+           
 
       - name: Food_productions_full  # Alias table BQ
         identifier: Production2  # Nom exact de la table
