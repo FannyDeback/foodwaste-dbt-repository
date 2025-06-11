@@ -57,6 +57,9 @@ sources:
             description: Utilisation de l'eau pondérée par la rareté par 1000 kcal (litres)
           - name: category
             description: Catégorie du produit alimentaire
+          - name: CO2_cat_id
+            description: id des produits
+
           
           
                    
@@ -140,3 +143,16 @@ sources:
       - name: Region_Country_Code  # Alias table BQ
         identifier: Region_Country_Code  # Nom exact de la table
         description:  Tableau de correspondance entre les pays et les régions
+      
+      - name: CO2_cat_code  # Alias table BQ
+        identifier: CO2_code  # Nom exact de la table
+        description: Répertoriage des catégories de produits (CO2_cat_id) avec les item (item_code)
+        columns:
+          - name: Food_product
+            description: catégories de produits d'émissions de CO2 (Agrybalise)
+          - name: CO2_cat_id
+            description: id des catégories de produits
+          - name: Item
+            description: produits de la table food_production
+          - name: Item_code__CPC_
+            description: code des produits
