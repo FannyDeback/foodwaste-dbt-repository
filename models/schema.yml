@@ -156,3 +156,11 @@ sources:
             description: produits de la table food_production
           - name: Item_code__CPC_
             description: code des produits
+
+      - name: production  # Alias table BQ
+        identifier: "New_Production_clean"  # Nom exact de la table
+        description: Données sur la production agricole mondiale
+
+      - name: Loss_mediane  # Alias table BQ
+        identifier: "Loss_median"  # Nom exact de la table
+        description: Mediane du % de perte par produit
