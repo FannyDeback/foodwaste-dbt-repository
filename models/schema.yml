@@ -157,6 +157,12 @@ sources:
           - name: Item_code__CPC_
             description: code des produits
 
+<<<<<<< HEAD
+=======
+      - name: production  # Alias table BQ
+        identifier: "New_production"  # Nom exact de la table
+        description: Données sur la production agricole mondiale
+>>>>>>> 3502d85e71ab1662c389b96daad509400b133a7b
 
       - name: Loss_mediane  # Alias table BQ
         identifier: "Loss_median"  # Nom exact de la table
