@@ -58,11 +58,7 @@ sources:
           - name: category
             description: Catégorie du produit alimentaire
           - name: CO2_cat_id
-            description: id des produits
-
-          
-          
-                   
+            description: id des produits              
 
       - name: new_waste_table  # Alias table BQ
         identifier: New_Waste # Nom exact de la table
@@ -102,47 +98,6 @@ sources:
             description: Lien vers la source des données ou rapport officiel
           - name:  notes
             description: Remarques supplémentaires sur la fiabilité ou la précision des données
-
-           
-
-      - name: Food_productions_full  # Alias table BQ
-        identifier: Production2  # Nom exact de la table
-        description:  Données sur la production alimentaire mondiale
-        columns:
-          - name: domain_code
-            description: Code du domaine FAO pour la classification des données
-          - name: domain
-            description:  Nom du domaine
-          - name: Area Code _M49_
-            description: Code M49 attribué au pays ou à la région selon l'ONU
-          - name: area
-            description: Nom du pays ou de la région
-          - name: element_code
-            description: Code de l'élément décrivant la mesure de production
-          - name: element
-            description: Type de donnée mesurée
-          - name: Item Code _CPC_
-            description: Code CPC de classification des produits alimentaires
-          - name: item
-            description:  Nom du produit alimentaire
-          - name: year_code
-            description: Code représentant l'année de la mesure
-          - name: year
-            description:  Année de collecte des données
-          - name: unit
-            description: Unité de mesure utilisée
-          - name: value
-            description: Valeur correspondant à la quantité produite
-          - name:  flag
-            description: indicateur utilisé par la FAO pour qualifier la source, la fiabilité ou le mode d’obtention des données
-          - name: flag_description
-            description: Description du code drapeau
-          - name: note
-            description:  Remarques supplémentaires sur la donnée ou la méthode de collecte
-
-      - name: Region_Country_Code  # Alias table BQ
-        identifier: Region_Country_Code  # Nom exact de la table
-        description:  Tableau de correspondance entre les pays et les régions
 
       - name: production  # Alias table BQ
         identifier: "New_production"  # Nom exact de la table

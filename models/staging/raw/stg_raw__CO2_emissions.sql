@@ -33,9 +33,20 @@ renamed as (
         scarcity_weighted_water_use_per_100g_protein__liters_per_100g_protein_,
         scarcity_weighted_water_use_per_1000kcal__liters_per_1000_kilocalories_,
         category,
-        co2_cat_id
+        cast(co2_cat_id as INT64) AS co2_cat_id,
+        CASE
+            When co2_cat_id = "4" then "animal"
+            When co2_cat_id = "9" then "animal"
+            When co2_cat_id = "12" then "animal"
+            When co2_cat_id = "14" then "animal"
+            When co2_cat_id = "16" then "animal"
+            When co2_cat_id = "25" then "animal"
+            When co2_cat_id = "26" then "animal"
+            else "veg"
+        END AS animal_vegetal
 
     from source
+
 
 )
 
