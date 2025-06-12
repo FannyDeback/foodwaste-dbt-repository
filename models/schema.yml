@@ -147,6 +147,35 @@ sources:
       - name: production  # Alias table BQ
         identifier: "New_production"  # Nom exact de la table
         description: Données sur la production agricole mondiale
+        columns:
+          - name: Domain_code
+            description: Code du domaine FAO pour la classification des données
+          - name: Domain
+            description:  Nom du domaine
+          - name: Area Code _M49_
+            description: Code M49 attribué au pays ou à la région selon l'ONU
+          - name: Area
+            description: Nom du pays ou de la région
+          - name: Element_code
+            description: Code de l'élément décrivant la mesure de production
+          - name: Element
+            description: Type de donnée mesurée
+          - name: Item Code _CPC_
+            description: Code CPC de classification des produits alimentaires
+          - name: Item
+            description:  Nom du produit alimentaire
+          - name: Year
+            description:  Année de collecte des données
+          - name: Unit
+            description: Unité de mesure utilisée
+          - name: Value
+            description: Valeur correspondant à la quantité produite
+          - name: Flag
+            description: indicateur utilisé par la FAO pour qualifier la source, la fiabilité ou le mode d’obtention des données
+          - name: Flag_description
+            description: Description du code drapeau
+          - name: CO2_Id
+            description: numéro CO2 ID
 
       - name: Loss_mediane  # Alias table BQ
         identifier: "Loss_median"  # Nom exact de la table
