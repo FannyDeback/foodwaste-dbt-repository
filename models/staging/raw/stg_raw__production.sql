@@ -9,27 +9,26 @@ source as (
 renamed as (
 
     select
-        domain code,
+        `domain code`       as domain_code,
         domain,
         area_code,
         area,
-        element code,
+        `element code`      as element_code,
         element,
-        item code,
+        `item code`         as item_code,
         item,
-        year code,
+        `year code`         as year_code,
         year,
         unit,
         value,
         flag,
-        flag description,
+        `flag description`  as flag_description,
         note,
-        sub region name,
-        region name,
+        `sub region name`   as sub_region_name,
+        `region name`       as region_name,
         co2_id
 
     from source
-
 )
 
 select * from renamed
