@@ -17,7 +17,7 @@ renamed as (
         element,
         item_code,
         item,
-        year,
+        PARSE_DATE('%Y', CAST(year AS STRING)) AS year,
         unit,
         value,
         flag,
