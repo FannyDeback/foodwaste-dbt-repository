@@ -158,7 +158,7 @@ sources:
             description: code des produits
 
       - name: production  # Alias table BQ
-        identifier: "New_Production_clean"  # Nom exact de la table
+        identifier: "New_production"  # Nom exact de la table
         description: Données sur la production agricole mondiale
 
       - name: Loss_mediane  # Alias table BQ
