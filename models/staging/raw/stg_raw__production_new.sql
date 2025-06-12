@@ -2,28 +2,30 @@ with
 
 source as (
 
-    select * from {{ source('raw', 'production') }}
+    select * from {{ source('raw', 'production_new') }}
 
 ),
 
 renamed as (
 
     select
-        domain_code,
+        domain code,
         domain,
         area_code,
         area,
-        element_code,
+        element code,
         element,
-        item_code,
+        item code,
         item,
+        year code,
         year,
         unit,
         value,
         flag,
-        flag_description,
-        sub_region_name,
-        region_name,
+        flag description,
+        note,
+        sub region name,
+        region name,
         co2_id
 
     from source
