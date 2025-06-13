@@ -8,16 +8,17 @@ sources:
       - name: CO2_emissions  # Alias table BQ
         identifier: "Agrybalise - CO2 emissions"  # Nom exact de la table
         description: Données sur les émissions de CO2 liées à la production alimentaire
+        tags: ["raw"]
         columns:
-          - name: Food_product
+          - name: food_product
             description: Produit alimentaire concerné
-          - name: Land_use_change
+          - name: land_use_change
             description: Impact du changement d'affectation des terres sur les émissions
-          - name: Animal_Feed
+          - name: animal_Feed
             description: Emissions liées à l'alimentation animale
-          - name: Farm
+          - name: farm
             description: Emissions générées au niveau de la ferme
-          - name: Processing
+          - name: processing
             description: Emissions issues du traitement et de la transformation des aliments
           - name: transport
             description: Emissions dues au transport des produits alimentaires
@@ -59,21 +60,20 @@ sources:
             description: Catégorie du produit alimentaire
           - name: CO2_cat_id
             description: id des produits
+          - name: animal_vegetal
+            description: Classification du produit (animale ou végétale)
 
-          
-          
-                   
+                
 
       - name: new_waste_table  # Alias table BQ
         identifier: New_Waste # Nom exact de la table
         description: Données sur le gaspillage alimentaire
+        tags: ["raw"]
         columns:
           - name:  m49_code
             description: Code de classification des pays selon l'ONU
           - name: country
             description: Nom du pays concerné par les pertes alimentaires
-          - name: region
-            description: Région géographique du pays
           - name: cpc_code
             description: Code de classification des produits selon la norme CPC
           - name: commodity
@@ -82,38 +82,31 @@ sources:
             description: Année de mesure des pertes alimentaires
           - name: loss_percentage
             description: Pourcentage de perte alimentaire par produit et pays
-          - name: loss_quantity
-            description: Quantité de perte alimentaire exprimée en tonnes
           - name: activity
             description: Type activité liée aux pertes 
           - name: food_supply_stage
-            description: Phase de la chaîne approvisionnement alimentaire où la perte se produit
-          - name: treatment
-            description: Mode de traitement des pertes alimentaires 
+            description: Phase de la chaîne approvisionnement alimentaire où la perte se produit 
           - name: cause_of_loss
             description: Cause identifiée du gaspillage alimentaire 
-          - name: sample_size
-            description: Nombre échantillons utilisés pour calculer les pertes alimentaires
           - name: method_data_collection
             description: Méthode de collecte des données 
           - name: reference
             description: Référence ou source utilisée pour la collecte des données
-          - name: url
-            description: Lien vers la source des données ou rapport officiel
           - name:  notes
             description: Remarques supplémentaires sur la fiabilité ou la précision des données
 
-           
 
-      - name: Food_productions_full  # Alias table BQ
-        identifier: Production2  # Nom exact de la table
-        description:  Données sur la production alimentaire mondiale
+
+      - name: production  # Alias table BQ
+        identifier: "New_production"  # Nom exact de la table
+        description: Données sur la production agricole mondiale
+        tags: ["raw"]
         columns:
           - name: domain_code
             description: Code du domaine FAO pour la classification des données
           - name: domain
             description:  Nom du domaine
-          - name: Area Code _M49_
+          - name: area Code
             description: Code M49 attribué au pays ou à la région selon l'ONU
           - name: area
             description: Nom du pays ou de la région
@@ -121,62 +114,217 @@ sources:
             description: Code de l'élément décrivant la mesure de production
           - name: element
             description: Type de donnée mesurée
-          - name: Item Code _CPC_
+          - name: item Code _CPC_
             description: Code CPC de classification des produits alimentaires
           - name: item
             description:  Nom du produit alimentaire
-          - name: year_code
-            description: Code représentant l'année de la mesure
           - name: year
             description:  Année de collecte des données
           - name: unit
             description: Unité de mesure utilisée
           - name: value
             description: Valeur correspondant à la quantité produite
-          - name:  flag
+          - name: flag
             description: indicateur utilisé par la FAO pour qualifier la source, la fiabilité ou le mode d’obtention des données
           - name: flag_description
             description: Description du code drapeau
-          - name: note
-            description:  Remarques supplémentaires sur la donnée ou la méthode de collecte
-
-      - name: Region_Country_Code  # Alias table BQ
-        identifier: Region_Country_Code  # Nom exact de la table
-        description:  Tableau de correspondance entre les pays et les régions
-
-      - name: production  # Alias table BQ
-        identifier: "New_production"  # Nom exact de la table
-        description: Données sur la production agricole mondiale
-        columns:
-          - name: Domain_code
-            description: Code du domaine FAO pour la classification des données
-          - name: Domain
-            description:  Nom du domaine
-          - name: Area Code _M49_
-            description: Code M49 attribué au pays ou à la région selon l'ONU
-          - name: Area
-            description: Nom du pays ou de la région
-          - name: Element_code
-            description: Code de l'élément décrivant la mesure de production
-          - name: Element
-            description: Type de donnée mesurée
-          - name: Item Code _CPC_
-            description: Code CPC de classification des produits alimentaires
-          - name: Item
-            description:  Nom du produit alimentaire
-          - name: Year
-            description:  Année de collecte des données
-          - name: Unit
-            description: Unité de mesure utilisée
-          - name: Value
-            description: Valeur correspondant à la quantité produite
-          - name: Flag
-            description: indicateur utilisé par la FAO pour qualifier la source, la fiabilité ou le mode d’obtention des données
-          - name: Flag_description
-            description: Description du code drapeau
+          - name: sub_region_name
+            description: sous-régions et leurs continents
+          - name: region_name
+            description: continents
           - name: CO2_Id
             description: numéro CO2 ID
+
+
+
 
       - name: Loss_mediane  # Alias table BQ
         identifier: "Loss_median"  # Nom exact de la table
         description: Mediane du % de perte par produit
+        tags: ["raw"]
+        columns:
+          - name: commodity
+            description: Type de produit alimentaire de la table wast
+          - name: cpc_code
+            description: Code de classification des produits selon la norme CPC de la table wast
+          - name: loss_percentage
+            description:  Pourcentage de perte alimentaire par produit et pays de la table waste
+
+
+
+
+      - name: merge_median_production 
+        description: Fusion des données de production et Loss_mediane pour calculer la valeur des pertes alimentaire en fonction du pourcentage de perte et de la quantité produite
+        tags: ["intermediate"]
+        columns:
+          - name: domain_code
+            description: Code du domaine FAO pour la classification des données
+          - name: domain
+            description:  Nom du domaine
+          - name: area Code
+            description: Code M49 attribué au pays ou à la région selon l'ONU
+          - name: area
+            description: Nom du pays ou de la région
+          - name: element_code
+            description: Code de l'élément décrivant la mesure de production
+          - name: element
+            description: Type de donnée mesurée
+          - name: item Code _CPC_
+            description: Code CPC de classification des produits alimentaires
+          - name: item
+            description:  Nom du produit alimentaire
+          - name: year
+            description:  Année de collecte des données
+          - name: unit
+            description: Unité de mesure utilisée
+          - name: value
+            description: Valeur correspondant à la quantité produite
+          - name: flag
+            description: indicateur utilisé par la FAO pour qualifier la source, la fiabilité ou le mode obtention des données
+          - name: flag_description
+            description: Description du code drapeau
+          - name: sub_region_name
+            description: sous-régions et leurs continents
+          - name: region_name
+            description: continents
+          - name: CO2_Id
+            description: numéro CO2 ID
+          - name: loss_percentage
+            description: Pourcentage de perte alimentaire par produit et pays de la table waste
+          - name: loss_value
+            description: Valeur totale de la perte alimentaire calculée
+
+
+      
+
+
+      - name: merge_CO2_production  
+        description: Fusion des données de production médiane et des émissions de CO2 liées aux produits alimentaires
+        tags: ["intermediate"]
+        columns:
+          - name: domain_code
+            description: Code du domaine FAO pour la classification des données
+          - name: domain
+            description:  Nom du domaine
+          - name: area Code
+            description: Code M49 attribué au pays ou à la région selon l'ONU
+          - name: area
+            description: Nom du pays ou de la région
+          - name: element_code
+            description: Code de l'élément décrivant la mesure de production
+          - name: element
+            description: Type de donnée mesurée
+          - name: item Code _CPC_
+            description: Code CPC de classification des produits alimentaires
+          - name: item
+            description:  Nom du produit alimentaire
+          - name: year
+            description:  Année de collecte des données
+          - name: unit
+            description: Unité de mesure utilisée
+          - name: value
+            description: Valeur correspondant à la quantité produite
+          - name: flag
+            description: indicateur utilisé par la FAO pour qualifier la source, la fiabilité ou le mode d’obtention des données
+          - name: flag_description
+            description: Description du code drapeau
+          - name: sub_region_name
+            description: sous-régions et leurs continents
+          - name: region_name
+            description: continents
+          - name: CO2_Id
+            description: numéro CO2 ID
+          - name: loss_percentage
+            description: Pourcentage de perte alimentaire par produit et pays de la table waste
+          - name: loss_value
+            description: Valeur totale de la perte alimentaire calculée
+          - name: total_emissions
+            description: Total des émissions de CO2 générées
+          - name: food_product
+            description: Produit alimentaire concerné
+          - name: category
+            description: Catégorie du produit alimentaire
+          - name: animal_vegetal
+            description: Classification du produit (animale ou végétale)
+
+
+
+
+
+      - name: FAO_prod_loss_Final
+        description: calcul des pertes alimentaires à partir des données de production médiane
+        tags: ["mart"]
+        columns:
+          - name: year
+            description:  Année de collecte des données
+          - name: region_name
+            description: continents
+          - name: sub_region_name
+            description: sous-régions et leurs continents
+          - name: country 
+            description:  Nom du pays
+          - name: item
+            description:  Nom du produit alimentaire
+          - name: value
+            description: Valeur correspondant à la quantité produite
+          - name: loss_percentage
+            description: Pourcentage de perte alimentaire par produit et pays de la table waste
+          - name: loss_value
+            description: Valeur totale de la perte alimentaire calculée
+          
+          
+          
+      - name: FAO_CO2_Final
+        description: Calcul de limpact environnemental des pertes alimentaires en fonction des émissions de CO2 générées
+        tags: ["mart"]
+        columns:
+          - name: year
+            description:  Année de collecte des données
+          - name: region_name
+            description: Continents
+          - name: sub_region_name
+            description: Sous-régions et leurs continents
+          - name: country
+            description: Nom du pays
+          - name: origin_type
+            description: Classification du produit (animale ou végétale) 
+          - name: food_group
+            description: Catégorie du produit alimentaire
+          - name: item_group
+            description: Produit alimentaire concerné
+          - name: item
+            description:  Nom du produit alimentaire
+          - name: value_tonnes
+            description: Valeur correspondant à la quantité produite
+          - name: loss_percentage
+            description: Pourcentage de perte alimentaire par produit et pays de la table waste
+          - name: loss_value_tonnes
+            description: Valeur totale de la perte alimentaire calculée
+          - name: total_emissions
+            description: Total des émissions de CO2 générées
+          - name: wasted_CO2_tonnes
+            description: Quantité estimée de CO2 gaspillée à cause des pertes alimentaires
+          - name: producted_CO2_tonnes
+            description: Quantité totale de CO2 générée par la production alimentaire 
+
+
+
+
+
+          
+          
+          
+   
+          
+          
+          
+          
+
+
+
+
+          
+          
+   
+        
+       
