@@ -11,8 +11,8 @@ SELECT
     item,
     value AS value_tonnes,
     loss_percentage,
-    loss_value AS loss_value_tonnes,
+    ROUND(loss_value,0) AS loss_value_tonnes,
     total_emissions,
-    total_emissions * loss_value AS wasted_CO2_tonnes
-    total_emissions * value AS producted_CO2_tonnes
+    ROUND(total_emissions * loss_value,0) AS wasted_CO2_tonnes,
+    ROUND(total_emissions * value,0) AS producted_CO2_tonnes
 FROM {{ ref('merge_CO2_production') }}
