@@ -19,6 +19,8 @@ FROM {{ ref('merge_prod_waste') }}
 SELECT
     s.*,
     e.total_emissions,
+    ROUND(total_emissions * loss_value,0) AS wasted_CO2_tonnes,
+    ROUND(total_emissions * value,0) AS produced_CO2_tonnes,
     e.food_product AS item_group,
     e.category AS food_group,
     e.animal_vegetal AS origin_type
